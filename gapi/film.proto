@@ -1,0 +1,27 @@
+
+
+syntax = "proto3";
+
+package gapi;
+
+option go_package = "movies/gapi";
+
+service RatedFilmService {
+    rpc getRatedFilm(GetFilmRequest) returns (GetFilmResponse) {};
+}
+
+message Film{
+    string id = 1;
+    string title = 2;
+    int64  rating = 3;
+}
+
+message GetFilmRequest {
+    string name = 1;
+}
+
+message GetFilmResponse {
+    Film film = 1;
+}
+
+
